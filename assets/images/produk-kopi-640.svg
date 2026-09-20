@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Kemasan Kopi Lereng Pekalongan</title>
+  <desc id="desc">Ilustrasi satu kemasan kopi berdiri di samping cangkir seduh.</desc>
+  <metadata>Sumber: ilustrasi SVG dibuat sendiri untuk pembelajaran website UMKM; bebas digunakan dalam proyek ini.</metadata>
+  <rect width="640" height="360" fill="#fef3c7" />
+  <path d="M190 62h190l24 230H166z" fill="#31564d" />
+  <path d="M190 62h190v38H190z" fill="#24443d" />
+  <circle cx="285" cy="174" r="58" fill="#d9772b" />
+  <path d="M248 178c24-34 54-34 78 0-24 24-54 24-78 0z" fill="#6f3b1f" />
+  <text x="285" y="260" fill="#fff" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">LERENG</text>
+  <path d="M430 218h92v62h-92z" fill="#fff" stroke="#6f3b1f" stroke-width="8" />
+  <path d="M522 232c34-2 34 38 0 36" fill="none" stroke="#6f3b1f" stroke-width="8" />
+  <path d="M440 206c8-28 16-28 24 0M468 206c8-28 16-28 24 0" fill="none" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" />
+</svg>
