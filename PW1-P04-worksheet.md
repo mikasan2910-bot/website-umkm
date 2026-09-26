@@ -10,7 +10,7 @@
 | PW1-P04-E04 | Grup pilihan | Select paket memakai `required` dan opsi awal bernilai kosong; topik dan waktu kontak memakai `fieldset`, `legend`, serta grup radio dengan `name` masing-masing. | Lulus |
 | PW1-P04-E05 | Pesan dan submit | Pesan memakai `textarea`, `required`, dan `minlength="10"`; tombol memiliki `type="submit"` dan label tindakan yang jelas. | Lulus |
 | PW1-P04-E06 | Audit focus order dan preview | Focus order diperiksa hanya dengan keyboard; Tab mengikuti urutan baca dari navigasi ke seluruh kontrol, grup radio, tombol, lalu preview. Submit valid memperbarui preview tanpa reload; tidak ada error JavaScript. | Lulus |
-| PW1-P04-E07 | Checkpoint Git | Commit implementasi awal `454fcc9` — `feat: tambah form kontak aksesibel dan preview`; commit worksheet awal `d50f36a` — `docs: catat evidence praktikum P04`. Checkpoint pembaruan P04-04 dicatat setelah commit. | Lulus |
+| PW1-P04-E07 | Checkpoint Git | Commit implementasi awal `454fcc9` — `feat: tambah form kontak aksesibel dan preview`; commit worksheet awal `d50f36a` — `docs: catat evidence praktikum P04`; checkpoint preferensi kontak P04-04 `9ce5d9b` — `feat: tambah preferensi kontak P04`. | Lulus |
 
 ## Hasil validasi
 
