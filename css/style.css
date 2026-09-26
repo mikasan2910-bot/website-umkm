@@ -127,6 +127,13 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
 .site-footer {
     padding: 24px 20px;
     color: white;
@@ -163,5 +170,43 @@ th,
 td {
     padding: 10px;
     text-align: left;
+    border: 1px solid #dccbbc;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.field input:not([type="radio"]),
+.field select,
+.field textarea {
+    width: 100%;
+}
+
+fieldset {
+    margin: 0 0 16px;
+}
+
+fieldset label {
+    display: block;
+    margin: 8px 0;
+}
+
+#preview-form {
+    padding: 16px;
+    white-space: pre-wrap;
+    background: white;
     border: 1px solid #dccbbc;
 }
