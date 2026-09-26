@@ -1,7 +1,6 @@
 # PW1-P04-01: Form Kontak yang Jelas dan Semantik
 
-**Durasi:** sekitar 35 menit  
-**Jenis unit:** konsep, demonstrasi, dan contoh ringkas
+**Durasi:** sekitar 35 menit | **Jenis unit:** konsep, demonstrasi, dan contoh ringkas
 
 Unit ini membahas cara merancang form kontak yang dapat dipahami, diisi, dan diperiksa dengan keyboard. Aktivitas membangun halaman dilakukan pada lesson praktikum tersendiri.
 
