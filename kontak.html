@@ -37,6 +37,12 @@
         </div>
 
         <div class="field">
+          <label for="whatsapp">Nomor WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" aria-describedby="whatsapp-help" required />
+          <p id="whatsapp-help">Cantumkan kode negara, misalnya +62, agar kami dapat menghubungi Anda.</p>
+        </div>
+
+        <div class="field">
           <label for="paket">Paket yang diminati</label>
           <select id="paket" name="paket" required>
             <option value="">Pilih paket</option>
@@ -48,9 +54,22 @@
 
         <fieldset>
           <legend>Topik pertanyaan</legend>
-          <label><input type="radio" name="topik" value="produk" required /> Informasi produk</label>
-          <label><input type="radio" name="topik" value="pesanan" /> Status pesanan</label>
-          <label><input type="radio" name="topik" value="kerja-sama" /> Kerja sama</label>
+          <input id="topik-produk" type="radio" name="topik" value="produk" required />
+          <label for="topik-produk">Informasi produk</label>
+          <input id="topik-pesanan" type="radio" name="topik" value="pesanan" />
+          <label for="topik-pesanan">Status pesanan</label>
+          <input id="topik-kerja-sama" type="radio" name="topik" value="kerja-sama" />
+          <label for="topik-kerja-sama">Kerja sama</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Waktu yang nyaman untuk dihubungi</legend>
+          <input id="waktu-pagi" type="radio" name="waktu-kontak" value="pagi" required />
+          <label for="waktu-pagi">Pagi, pukul 08.00-12.00</label>
+          <input id="waktu-siang" type="radio" name="waktu-kontak" value="siang" />
+          <label for="waktu-siang">Siang, pukul 12.00-17.00</label>
+          <input id="waktu-sore" type="radio" name="waktu-kontak" value="sore" />
+          <label for="waktu-sore">Sore, pukul 17.00-21.00</label>
         </fieldset>
 
         <div class="field">
