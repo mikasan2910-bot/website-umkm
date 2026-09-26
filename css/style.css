@@ -204,6 +204,70 @@ fieldset label {
     margin: 8px 0;
 }
 
+.time-options {
+    padding: 16px;
+    border: 1px solid #dccbbc;
+    border-radius: 4px;
+}
+
+.time-option-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.time-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 64px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 12px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #dccbbc;
+    border-radius: 4px;
+}
+
+.time-option input {
+    flex: 0 0 auto;
+    margin: 0;
+    accent-color: #31564d;
+}
+
+.time-option-copy {
+    min-width: 0;
+}
+
+.time-option-copy strong,
+.time-option-copy small {
+    display: block;
+}
+
+.time-option-copy small {
+    margin-top: 4px;
+    color: #6b5b52;
+}
+
+.time-option:has(input:checked) {
+    background: #edf4f1;
+    border-color: #31564d;
+    box-shadow: inset 0 0 0 1px #31564d;
+}
+
+.time-option:focus-within {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+    .time-option-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 #preview-form {
     padding: 16px;
     white-space: pre-wrap;

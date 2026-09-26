@@ -62,14 +62,22 @@
           <label for="topik-kerja-sama">Kerja sama</label>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="time-options">
           <legend>Waktu yang nyaman untuk dihubungi</legend>
-          <input id="waktu-pagi" type="radio" name="waktu-kontak" value="pagi" required />
-          <label for="waktu-pagi">Pagi, pukul 08.00-12.00</label>
-          <input id="waktu-siang" type="radio" name="waktu-kontak" value="siang" />
-          <label for="waktu-siang">Siang, pukul 12.00-17.00</label>
-          <input id="waktu-sore" type="radio" name="waktu-kontak" value="sore" />
-          <label for="waktu-sore">Sore, pukul 17.00-21.00</label>
+          <div class="time-option-list">
+            <label class="time-option" for="waktu-pagi">
+              <input id="waktu-pagi" type="radio" name="waktu-kontak" value="pagi" required />
+              <span class="time-option-copy"><strong>Pagi</strong><small>08.00-12.00</small></span>
+            </label>
+            <label class="time-option" for="waktu-siang">
+              <input id="waktu-siang" type="radio" name="waktu-kontak" value="siang" />
+              <span class="time-option-copy"><strong>Siang</strong><small>12.00-17.00</small></span>
+            </label>
+            <label class="time-option" for="waktu-sore">
+              <input id="waktu-sore" type="radio" name="waktu-kontak" value="sore" />
+              <span class="time-option-copy"><strong>Sore</strong><small>17.00-21.00</small></span>
+            </label>
+          </div>
         </fieldset>
 
         <div class="field">
