@@ -5,7 +5,10 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const data = new FormData(form);
+  preview.classList.add("status-success");
   preview.textContent = [
+    "Preview berhasil dibuat.",
+    "",
     `Nama: ${data.get("nama")}`,
     `Email: ${data.get("email")}`,
     `WhatsApp: ${data.get("whatsapp")}`,

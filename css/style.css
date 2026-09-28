@@ -1,25 +1,30 @@
 :root {
-    --color-primary: #6f3b1f;
-    --color-primary-strong: #4b2715;
-    --color-text: #2f2118;
-    --color-muted: #6b5b52;
+    --color-primary: #225c45;
+    --color-primary-strong: #164332;
+    --color-text: #24352e;
+    --color-muted: #52675c;
     --color-surface: #ffffff;
-    --color-surface-soft: #fff8f0;
-    --color-border: #dccbbc;
-    --color-focus: #1d4ed8;
-    --color-accent: #d9772b;
-    --color-accent-secondary: #31564d;
-    --color-selected-surface: #edf4f1;
-    --color-highlight: #fef3c7;
-    --color-highlight-hover: #fde68a;
+    --color-surface-soft: #f0f6f1;
+    --color-border: #c9d8cc;
+    --color-focus: #005fcc;
+    --color-accent: #bd7048;
+    --color-accent-secondary: #47705a;
+    --color-selected-surface: #e5f2e9;
+    --color-highlight: #f5d58c;
+    --color-highlight-hover: #edc46e;
+    --color-success: #216a46;
+    --color-success-soft: #e8f4eb;
     --space-1: 0.5rem;
     --space-2: 0.75rem;
     --space-3: 1rem;
     --space-4: 1.5rem;
     --space-5: 2rem;
+    --space-6: 2.5rem;
     --radius-sm: 0.5rem;
     --radius-md: 0.875rem;
-    --shadow-card: 0 0.5rem 1.5rem rgb(47 33 24 / 0.1);
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.75rem;
+    --shadow-card: 0 0.5rem 1.5rem rgb(36 53 46 / 0.12);
 }
 
 *,
@@ -122,14 +127,14 @@ a:hover {
 }
 
 .page {
-    padding-block: var(--space-5);
+    padding-block: var(--space-6);
 }
 
 .hero {
-    padding: var(--space-5);
+    padding: var(--space-6);
     color: var(--color-surface);
     background: var(--color-primary);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xl);
 }
 
 .hero img {
@@ -213,6 +218,7 @@ form {
 }
 
 .product-card {
+    border-radius: var(--radius-lg);
     border-left: 5px solid var(--color-accent);
 }
 
@@ -346,4 +352,9 @@ audio {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
+}
+
+#preview-form.status-success {
+    background: var(--color-success-soft);
+    border-left: 4px solid var(--color-success);
 }
