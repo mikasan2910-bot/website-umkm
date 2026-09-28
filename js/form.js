@@ -1,8 +1,8 @@
 const form = document.querySelector("#form-kontak");
 const preview = document.querySelector("#preview-form");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
   const data = new FormData(form);
   preview.classList.add("status-success");
