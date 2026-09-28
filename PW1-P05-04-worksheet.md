@@ -7,27 +7,29 @@
 | Praktikum terbimbing P05-02 | `194afa7` | Baseline, token, komponen, dan focus-visible. |
 | Tugas mandiri P05-04 | `1b38901` | Tema pinus, pasangan token tambahan, dan status preview sukses. |
 
-## Variasi Tema: Kopi Bangsa Pinus
+## Variasi Tema: Kopi Bangsa Rempah dan Madu
 
-Tema mengganti palet cokelat menjadi hijau pinus dan mint, dengan aksen madu. Nilai fungsional warna dipusatkan pada custom properties.
+Tema akhir memakai terracotta dan espresso sebagai warna ajakan bertindak, dengan aksen madu pada CTA hero dan hijau untuk status sukses. Nilai fungsional warna dipusatkan pada custom properties.
 
 | Token | Sebelum | Sesudah | Peran |
 | --- | --- | --- | --- |
-| `--color-primary` | `#6f3b1f` | `#225c45` | Identitas utama, link, hero, dan tombol umum |
-| `--color-primary-strong` | `#4b2715` | `#164332` | Hover dan teks penekanan |
-| `--color-text` | `#2f2118` | `#24352e` | Teks utama |
-| `--color-muted` | `#6b5b52` | `#52675c` | Keterangan sekunder |
-| `--color-surface-soft` | `#fff8f0` | `#f0f6f1` | Latar halaman dan permukaan lembut |
-| `--color-border` | `#dccbbc` | `#c9d8cc` | Batas kontrol dan komponen |
+| `--color-primary` | `#6f3b1f` | `#a6401b` | Identitas utama, link, hero, dan tombol umum |
+| `--color-primary-strong` | `#4b2715` | `#7c2d12` | Hover dan teks penekanan |
+| `--color-text` | `#2f2118` | `#30231e` | Teks utama |
+| `--color-muted` | `#6b5b52` | `#69574e` | Keterangan sekunder |
+| `--color-surface-soft` | `#fff8f0` | `#fff7ed` | Latar halaman dan permukaan lembut |
+| `--color-border` | `#dccbbc` | `#e8d4bf` | Batas kontrol dan komponen |
 | `--color-focus` | `#1d4ed8` | `#005fcc` | Focus indicator |
 | `--color-success` | Baru | `#216a46` | Border status submit sukses |
 | `--color-success-soft` | Baru | `#e8f4eb` | Latar status submit sukses |
 
-Token pendukung lain yang direvisi: `--color-accent`, `--color-accent-secondary`, `--color-selected-surface`, `--color-highlight`, `--color-highlight-hover`, dan `--shadow-card`.
+Token pendukung lain yang direvisi: `--color-accent`, `--color-accent-secondary`, `--color-selected-surface`, `--color-highlight`, `--color-highlight-hover`, dan `--shadow-card`. CTA umum memakai primary terracotta dengan teks putih; CTA hero memakai highlight madu dengan teks gelap.
 
 Pasangan radius baru adalah `--radius-lg: 1.25rem` dan `--radius-xl: 1.75rem`. `--radius-lg` dipakai pada `.product-card`; `--radius-xl` dipakai pada `.hero`. Token spacing `--space-6: 2.5rem` digunakan oleh `.page` dan `.hero`.
 
-Komponen berbeda memakai `--color-primary`: link navigasi biasa memakai warna teks primary, sedangkan latar `.hero` memakai warna primary yang sama. Nilai computed keduanya adalah `rgb(34, 92, 69)`. Screenshot navigasi dan hero ditampilkan pada percakapan kerja, tetapi belum diekspor menjadi berkas gambar di repositori.
+Komponen berbeda memakai `--color-primary`: link navigasi biasa memakai warna teks primary, sedangkan latar `.hero` memakai warna primary yang sama. Nilai computed keduanya pada palet akhir adalah `rgb(166, 64, 27)`. Screenshot navigasi dan hero ditampilkan pada percakapan kerja, tetapi belum diekspor menjadi berkas gambar di repositori.
+
+Polish visual berikutnya mengganti primary ke `#a6401b`; link navigasi dan latar hero memakai computed `rgb(166, 64, 27)`. Pemeriksaan kontras ulang mencatat rasio teks putih terhadap primary sebesar 6.23:1.
 
 ## Evidence Praktikum Terbimbing P05-02
 
@@ -48,11 +50,12 @@ Komponen berbeda memakai `--color-primary`: link navigasi biasa memakai warna te
 | --- | --- | --- |
 | Daftar token tema | Token warna sebelum/sesudah dan token baru tercatat pada tabel tema di atas. | Lulus |
 | Dua komponen memakai token sama | Link navigasi dan hero memakai `--color-primary`; screenshot tampil di sesi, belum disimpan sebagai berkas lokal. | Sebagian |
-| Keterbacaan | Rasio hasil hitung browser: teks utama/latar lembut 11.80:1; primary/permukaan 7.82:1; teks putih/hero 7.82:1; muted/latar lembut 5.55:1; focus/latar lembut 5.46:1; success/permukaan sukses 5.78:1. | Lulus |
+| Keterbacaan | Rasio hasil hitung browser pada palet akhir: teks utama/latar lembut 14.28:1; primary/permukaan 6.23:1; teks putih/hero 6.23:1; muted/latar lembut 6.43:1; focus/latar lembut 5.64:1; teks tombol hero/highlight 11.76:1; success/permukaan sukses 5.78:1. | Lulus |
 | Keyboard focus | Urutan Tab mencapai skip link lalu input nama; keduanya memiliki outline solid yang terlihat. | Lulus |
 | Konflik cascade/specificity | Pada tombol hero, `button` menetapkan `background: var(--color-primary)` dengan specificity `(0,0,1)`. `.hero button` menetapkan `background: var(--color-highlight)` dengan specificity `(0,1,1)` dan menang. Warna computed akhir `rgb(245, 213, 140)`. Screenshot panel DevTools belum dilampirkan. | Sebagian |
 | Challenge status sukses | Submit valid menampilkan teks `Preview berhasil dibuat.` dan kelas `.status-success`; token `--color-success` mengatur border, `--color-success-soft` mengatur latar. `#preview-form` tetap berupa live region sehingga status tidak disampaikan melalui warna saja. | Lulus |
 | Commit tugas mandiri | `1b38901` (`feat: tambah tema token Kopi Bangsa`), terpisah dari checkpoint praktikum. | Lulus |
+| Polish CTA pelanggan | Primary terracotta dan aksen madu terlihat pada navigasi, hero, serta tombol; palet diperiksa ulang untuk kontras. | Lulus |
 
 ## Regression dan Batas Materi
 

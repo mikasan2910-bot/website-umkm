@@ -1,17 +1,17 @@
 :root {
-    --color-primary: #225c45;
-    --color-primary-strong: #164332;
-    --color-text: #24352e;
-    --color-muted: #52675c;
+    --color-primary: #a6401b;
+    --color-primary-strong: #7c2d12;
+    --color-text: #30231e;
+    --color-muted: #69574e;
     --color-surface: #ffffff;
-    --color-surface-soft: #f0f6f1;
-    --color-border: #c9d8cc;
+    --color-surface-soft: #fff7ed;
+    --color-border: #e8d4bf;
     --color-focus: #005fcc;
-    --color-accent: #bd7048;
-    --color-accent-secondary: #47705a;
-    --color-selected-surface: #e5f2e9;
-    --color-highlight: #f5d58c;
-    --color-highlight-hover: #edc46e;
+    --color-accent: #e56b32;
+    --color-accent-secondary: #3c6b56;
+    --color-selected-surface: #eff6ef;
+    --color-highlight: #ffe08a;
+    --color-highlight-hover: #ffd166;
     --color-success: #216a46;
     --color-success-soft: #e8f4eb;
     --space-1: 0.5rem;
@@ -24,7 +24,7 @@
     --radius-md: 0.875rem;
     --radius-lg: 1.25rem;
     --radius-xl: 1.75rem;
-    --shadow-card: 0 0.5rem 1.5rem rgb(36 53 46 / 0.12);
+    --shadow-card: 0 0.5rem 1.5rem rgb(48 35 30 / 0.12);
 }
 
 *,
