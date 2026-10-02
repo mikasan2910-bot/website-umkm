@@ -1,19 +1,19 @@
 :root {
-    --color-primary: #a6401b;
-    --color-primary-strong: #7c2d12;
-    --color-text: #30231e;
-    --color-muted: #69574e;
+    --color-primary: #245b4a;
+    --color-primary-strong: #173f34;
+    --color-text: #26312c;
+    --color-muted: #55665d;
     --color-surface: #ffffff;
-    --color-surface-soft: #fff7ed;
-    --color-border: #e8d4bf;
-    --color-focus: #005fcc;
-    --color-accent: #e56b32;
-    --color-accent-secondary: #3c6b56;
-    --color-selected-surface: #eff6ef;
-    --color-highlight: #ffe08a;
-    --color-highlight-hover: #ffd166;
-    --color-success: #216a46;
-    --color-success-soft: #e8f4eb;
+    --color-surface-soft: #f2f6ef;
+    --color-border: #ced9cf;
+    --color-focus: #a33b16;
+    --color-accent: #d46a3c;
+    --color-accent-secondary: #356b58;
+    --color-selected-surface: #e7f2e8;
+    --color-highlight: #f4d27d;
+    --color-highlight-hover: #ecc05e;
+    --color-success: #17613e;
+    --color-success-soft: #e7f2e9;
     --space-1: 0.5rem;
     --space-2: 0.75rem;
     --space-3: 1rem;
@@ -24,6 +24,8 @@
     --radius-md: 0.875rem;
     --radius-lg: 1.25rem;
     --radius-xl: 1.75rem;
+    --radius-card: 1rem;
+    --radius-feature: 1.5rem;
     --shadow-card: 0 0.5rem 1.5rem rgb(48 35 30 / 0.12);
 }
 
@@ -134,7 +136,7 @@ a:hover {
     padding: var(--space-6);
     color: var(--color-surface);
     background: var(--color-primary);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-feature);
 }
 
 .hero img {
@@ -218,7 +220,7 @@ form {
 }
 
 .product-card {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-card);
     border-left: 5px solid var(--color-accent);
 }
 
