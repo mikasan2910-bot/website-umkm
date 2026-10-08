@@ -100,23 +100,33 @@ a:hover {
     margin-inline: auto;
 }
 
+.nav {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .brand {
     display: inline-block;
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
     color: var(--color-text);
     font-weight: 800;
     text-decoration: none;
 }
 
 .nav ul {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
 .nav li {
-    display: inline-block;
-    margin: 0 var(--space-2) var(--space-1) 0;
+    margin: 0;
 }
 
 .nav a[aria-current="page"] {
@@ -137,12 +147,6 @@ a:hover {
     color: var(--color-surface);
     background: var(--color-primary);
     border-radius: var(--radius-feature);
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    margin-top: var(--space-4);
 }
 
 h1,
@@ -177,7 +181,8 @@ li {
     font-weight: 800;
 }
 
-button {
+button,
+.button {
     display: inline-block;
     padding: var(--space-2) var(--space-3);
     color: var(--color-surface);
@@ -190,7 +195,8 @@ button {
     border-radius: var(--radius-sm);
 }
 
-button:hover {
+button:hover,
+.button:hover {
     color: var(--color-surface);
     background: var(--color-primary-strong);
 }
@@ -220,8 +226,55 @@ form {
 }
 
 .product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: var(--radius-card);
     border-left: 5px solid var(--color-accent);
+}
+
+.product-badge {
+    position: absolute;
+    inset-block-start: var(--space-2);
+    inset-inline-end: var(--space-2);
+    align-self: flex-start;
+    padding: 0.25rem var(--space-2);
+    color: var(--color-primary-strong);
+    font-size: 0.875rem;
+    font-weight: 800;
+    background: #fef3c7;
+    border-radius: 999px;
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-4);
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+.product-grid,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .business-info {
@@ -322,6 +375,13 @@ audio {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
+}
+
+.time-option-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: var(--space-2);
 }
 
 .time-option input {
