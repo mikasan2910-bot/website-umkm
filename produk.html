@@ -47,6 +47,7 @@
             <div class="product-grid">
               <article class="product-card">
                 <span class="product-badge">Terlaris</span>
+                <img src="assets/images/produk-kopi-640.svg" srcset="assets/images/produk-kopi-640.svg 640w, assets/images/produk-kopi-960.svg 960w" sizes="(min-width: 60rem) 12rem, (min-width: 48rem) calc(50vw - 3.75rem), calc(100vw - 4.25rem)" width="640" height="360" loading="lazy" alt="Kemasan Kopi Lereng Pekalongan berwarna hijau di samping cangkir seduh" />
                 <h3>Kopi Tubruk Signature</h3>
                 <p>Karakter cokelat dan kacang dengan body yang kuat.</p>
                 <p class="price">Rp45.000</p>
@@ -83,8 +84,9 @@
       </section>
       <section aria-labelledby="harga-title">
         <h2 id="harga-title">Daftar Harga</h2>
-        <table>
-          <caption>Daftar harga produk Kopi Bangsa</caption>
+        <div class="table-scroll" role="region" aria-labelledby="daftar-harga-caption" tabindex="0">
+          <table>
+          <caption id="daftar-harga-caption">Daftar harga produk Kopi Bangsa</caption>
           <thead>
             <tr>
               <th scope="col">Produk</th>
@@ -109,7 +111,8 @@
               <td>Rp32.000</td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </section>
     </main>
     <footer class="site-footer">
