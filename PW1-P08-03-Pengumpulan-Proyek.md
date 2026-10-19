@@ -21,7 +21,7 @@ Pengumpulan proyek dan validasi berbobot **5% nilai akhir**. Bobot ini kecil kar
 - Pesan commit: `feat: terapkan responsive mobile-first`
 - Tanggal dan waktu commit: 12 Oktober 2026, 12:20:18 WIB (`+07:00`)
 - Catatan batas commit: HEAD lokal `0538923` adalah perubahan setelah milestone tersebut dan menambahkan navigasi hamburger dengan JavaScript. Hash di atas dipakai sebagai baseline pra-JavaScript P07.
-- Bukti `git status` bersih: `git status --porcelain` kosong setelah commit pengumpulan P08 `1f6cefd8afe0201dc216af4e03ac028572ec3224`. Pembaruan akhir worksheet, screenshot, dan dokumen Word akan disimpan dalam commit final lokal sebelum pengumpulan.
+- Bukti `git status` bersih: `git status --porcelain` kosong setelah seluruh paket final P08 di-commit secara lokal; working tree terverifikasi bersih.
 
 ### Commit Implementasi untuk Konteks UTS
 
@@ -71,7 +71,7 @@ Lampiran atau tautan evidence:
 | Homepage, narrow viewport | [home-narrow.png](assets/evidence/PW1-P08-03/home-narrow.png) | Lebar CSS 320px; tidak ada overflow horizontal. |
 | Homepage, wide viewport | [home-wide.png](assets/evidence/PW1-P08-03/home-wide.png) | Screenshot Edge headless pada viewport 1440×1000; layout desktop terlihat dan tidak overflow. |
 | Halaman form, viewport sempit | [kontak-form-narrow.png](assets/evidence/PW1-P08-03/kontak-form-narrow.png) | Lebar CSS 320px; form terlihat dan halaman tidak overflow. |
-| `git status` bersih | Commit `1f6cefd8afe0201dc216af4e03ac028572ec3224` | `git status --porcelain` kosong setelah commit pengumpulan P08; pembaruan akhir ikut dicatat pada commit lanjutan. |
+| `git status` bersih | `git status --porcelain` kosong setelah commit final lokal | Semua dokumen dan evidence final sudah di-commit; working tree bersih pada verifikasi akhir. |
 
 ## Quality Gate
 
@@ -92,7 +92,7 @@ Tuliskan perbaikan responsive atau semantic HTML paling penting. Maksimal 100 ka
 
 > Jumlah kata: 57/100
 >
-> Pada lebar CSS 320px, Beranda, Tentang, Produk, Galeri, dan Kontak tidak mengalami overflow horizontal. Form tetap di dalam viewport; tabel harga memakai area scroll tersendiri. Baseline pra-JavaScript adalah commit P07 `43481ca`. Screenshot homepage narrow, homepage wide 1440px, dan form narrow tersedia. Semua bagian pengumpulan telah dilengkapi; bukti `git status --porcelain` kosong dicatat setelah commit paket P08 lokal.
+> Pada lebar CSS 320px, Beranda, Tentang, Produk, Galeri, dan Kontak tidak mengalami overflow horizontal. Form tetap di dalam viewport; tabel harga memakai area scroll tersendiri. Baseline pra-JavaScript adalah commit P07 `43481ca`. Screenshot homepage narrow dan wide 1440px serta form narrow tersedia. Semua bagian pengumpulan telah dilengkapi. `git status --porcelain` kosong setelah seluruh paket P08 di-commit secara lokal.
 
 ## Validasi Singkat oleh Dosen
 
