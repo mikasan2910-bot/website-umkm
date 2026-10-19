@@ -21,7 +21,7 @@ Pengumpulan proyek dan validasi berbobot **5% nilai akhir**. Bobot ini kecil kar
 - Pesan commit: `feat: terapkan responsive mobile-first`
 - Tanggal dan waktu commit: 12 Oktober 2026, 12:20:18 WIB (`+07:00`)
 - Catatan batas commit: HEAD lokal `0538923` adalah perubahan setelah milestone tersebut dan menambahkan navigasi hamburger dengan JavaScript. Hash di atas dipakai sebagai baseline pra-JavaScript P07.
-- Bukti `git status` bersih: Belum tersedia. Working tree saat ini memiliki dokumen P08-02, dokumen P08-03, dan screenshot evidence yang belum di-commit.
+- Bukti `git status` bersih: `git status --porcelain` kosong setelah commit pengumpulan P08 `1f6cefd8afe0201dc216af4e03ac028572ec3224`. Pembaruan akhir worksheet, screenshot, dan dokumen Word akan disimpan dalam commit final lokal sebelum pengumpulan.
 
 ### Commit Implementasi untuk Konteks UTS
 
@@ -48,7 +48,7 @@ Tuliskan halaman yang diperiksa dan tandai hasil pengujian.
 | Halaman | Viewport/perangkat | Hasil | Catatan |
 | --- | --- | --- | --- |
 | Beranda (`index.html`) | Narrow, lebar CSS 320px | Lulus | Landmark `main` dan satu link aktif tersedia; tidak ada overflow horizontal. |
-| Beranda (`index.html`) | Wide, lebar CSS 1441px | Lulus | Computed layout desktop tampil dan tidak overflow; screenshot yang tersimpan perlu diambil ulang karena isinya menunjukkan tampilan sempit. |
+| Beranda (`index.html`) | Wide, lebar CSS 1440px | Lulus | Screenshot Edge headless menunjukkan navigasi desktop, hero dua kolom, dan kartu produk tiga kolom; tidak ada overflow horizontal. |
 | Tentang Kami (`tentang.html`) | Narrow, lebar CSS 320px | Lulus | Landmark `main`, satu link aktif, dan tidak ada overflow horizontal. |
 | Produk (`produk.html`) | Narrow, lebar CSS 320px | Lulus | Tabel harga berada dalam `.table-scroll`; halaman tidak overflow. |
 | Galeri (`galeri.html`) | Narrow, lebar CSS 320px | Lulus | Landmark `main`, satu link aktif, dan tidak ada overflow horizontal. |
@@ -59,9 +59,9 @@ Tuliskan halaman yang diperiksa dan tandai hasil pengujian.
 - [x] Tautan repository dapat dibuka atau arsip proyek dapat diekstrak.
 - [x] Commit hash final pra-JavaScript dicantumkan.
 - [x] Screenshot homepage pada narrow viewport dilampirkan.
-- [ ] Screenshot homepage pada wide viewport dilampirkan.
+- [x] Screenshot homepage pada wide viewport dilampirkan.
 - [x] Screenshot satu halaman yang memuat tabel atau form pada viewport sempit dilampirkan.
-- [ ] Bukti `git status` bersih dilampirkan.
+- [x] Bukti `git status` bersih dicatat dan diverifikasi setelah commit.
 - [x] Catatan validasi responsive atau semantic HTML ditulis maksimal 100 kata.
 
 Lampiran atau tautan evidence:
@@ -69,9 +69,9 @@ Lampiran atau tautan evidence:
 | Evidence | Nama file/tautan | Keterangan |
 | --- | --- | --- |
 | Homepage, narrow viewport | [home-narrow.png](assets/evidence/PW1-P08-03/home-narrow.png) | Lebar CSS 320px; tidak ada overflow horizontal. |
-| Homepage, wide viewport | [home-wide.png](assets/evidence/PW1-P08-03/home-wide.png) | File hasil capture menunjukkan layout sempit; perlu diambil ulang pada wide viewport sebelum dikumpulkan. |
+| Homepage, wide viewport | [home-wide.png](assets/evidence/PW1-P08-03/home-wide.png) | Screenshot Edge headless pada viewport 1440×1000; layout desktop terlihat dan tidak overflow. |
 | Halaman form, viewport sempit | [kontak-form-narrow.png](assets/evidence/PW1-P08-03/kontak-form-narrow.png) | Lebar CSS 320px; form terlihat dan halaman tidak overflow. |
-| `git status` bersih | Belum tersedia | Working tree belum bersih; P08 docs dan screenshot belum di-commit. |
+| `git status` bersih | Commit `1f6cefd8afe0201dc216af4e03ac028572ec3224` | `git status --porcelain` kosong setelah commit pengumpulan P08; pembaruan akhir ikut dicatat pada commit lanjutan. |
 
 ## Quality Gate
 
@@ -84,15 +84,15 @@ Isi hasil pemeriksaan dan sertakan lokasi bukti yang sesuai.
 | HTML | Struktur semantik utama dari P02-P04 masih dipertahankan. | Lulus pada halaman yang diperiksa | Lima halaman memiliki landmark `main` dan satu link `aria-current`; form memiliki label dan fieldset, tabel memiliki caption serta header. |
 | CSS | Design token, Grid/Flexbox, dan responsive rule dari P05-P07 masih ada. | Lulus | Terlihat di `css/style.css`, termasuk token, Grid/Flexbox, dan breakpoint 42rem, 48rem, serta 60rem. |
 | Responsive | Tidak ada overflow horizontal tingkat halaman pada viewport sekitar 320px. | Lulus pada lima halaman | Beranda, Tentang, Produk, Galeri, dan Kontak diuji pada lebar CSS 320px tanpa overflow. |
-| Evidence | Screenshot dan catatan cukup untuk memvalidasi hasil. | Sebagian | Dua screenshot valid dan catatan tersedia; screenshot wide perlu diulang dan bukti `git status` bersih belum ada. |
+| Evidence | Screenshot dan catatan cukup untuk memvalidasi hasil. | Lulus | Semua informasi, catatan, tiga screenshot, dan bukti status Git tercatat. |
 
 ## Catatan Validasi
 
 Tuliskan perbaikan responsive atau semantic HTML paling penting. Maksimal 100 kata.
 
-> Jumlah kata: 81/100
+> Jumlah kata: 57/100
 >
-> Pada lebar CSS 320px, Beranda, Tentang, Produk, Galeri, dan Kontak tidak mengalami overflow horizontal. Form kontak tetap berada di dalam viewport; tabel harga produk ditempatkan pada area scroll horizontal tersendiri. Navigasi dan landmark utama tersedia pada semua halaman yang diuji. Screenshot homepage narrow dan form kontak narrow tersedia. Screenshot wide perlu diambil ulang karena hasil capture saat ini tidak menunjukkan layout desktop. Baseline pra-JavaScript adalah commit P07 `43481ca`; bukti `git status` bersih belum tersedia karena dokumen dan screenshot P08 belum di-commit.
+> Pada lebar CSS 320px, Beranda, Tentang, Produk, Galeri, dan Kontak tidak mengalami overflow horizontal. Form tetap di dalam viewport; tabel harga memakai area scroll tersendiri. Baseline pra-JavaScript adalah commit P07 `43481ca`. Screenshot homepage narrow, homepage wide 1440px, dan form narrow tersedia. Semua bagian pengumpulan telah dilengkapi; bukti `git status --porcelain` kosong dicatat setelah commit paket P08 lokal.
 
 ## Validasi Singkat oleh Dosen
 
