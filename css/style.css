@@ -406,20 +406,52 @@ form {
 
 .js-product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-3);
 }
 
 .js-product-card {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
     padding: var(--space-3);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
+    border-inline-start: 5px solid var(--color-accent);
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
 }
 
 .js-product-card h3 {
     margin-block-start: 0;
+}
+
+.js-product-label {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-block-end: var(--space-2);
+    padding: 0.2rem var(--space-2);
+    color: var(--color-primary-strong);
+    font-size: 0.875rem;
+    font-weight: 700;
+    background: var(--color-selected-surface);
+    border-radius: var(--radius-sm);
+}
+
+.js-product-card .price {
+    margin-block: auto var(--space-2);
+    padding-block-start: var(--space-2);
+}
+
+.js-product-card .price-promo {
+    color: var(--color-success);
+}
+
+.discount-note {
+    margin-block: 0 var(--space-2);
+    color: var(--color-success);
+    font-size: 0.875rem;
+    font-weight: 700;
 }
 
 .stock-badge {
@@ -441,6 +473,12 @@ form {
 .stock-badge.empty {
     color: #8f291d;
     background: #fce5e0;
+}
+
+@media (min-width: 42rem) {
+    .js-product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    }
 }
 
 .gallery-grid {
