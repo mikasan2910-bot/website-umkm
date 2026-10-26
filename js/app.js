@@ -42,6 +42,20 @@ function labelKategori(kategori) {
   }
 }
 
+function hitungHargaPromo(harga, diskonPersen) {
+  if (
+    !Number.isFinite(harga) ||
+    !Number.isFinite(diskonPersen) ||
+    harga < 0 ||
+    diskonPersen < 0 ||
+    diskonPersen > 100
+  ) {
+    return null;
+  }
+
+  return Math.round(harga * (1 - diskonPersen / 100));
+}
+
 function renderProduk() {
   const grid = document.querySelector("#produk-dinamis");
   const ringkasan = document.querySelector("#produk-ringkasan");
@@ -58,10 +72,10 @@ function renderProduk() {
     const kategori = labelKategori(produk.kategori);
     const labelAksi = produk.stok > 0 ? "Siap dipesan" : "Hubungi admin";
     const labelUnggulan = produk.unggulan ? "Produk unggulan" : "Pilihan kedai";
-    const hargaPromo = produk.diskonPersen
-      ? produk.harga * (1 - produk.diskonPersen / 100)
-      : null;
-    const markupHarga = hargaPromo
+    const hargaPromo = produk.diskonPersen === undefined
+      ? null
+      : hitungHargaPromo(produk.harga, produk.diskonPersen);
+    const markupHarga = hargaPromo !== null
       ? `<p class="price price-promo"><s>${formatRupiah.format(produk.harga)}</s> ${formatRupiah.format(hargaPromo)}</p>`
       : `<p class="price">${formatRupiah.format(produk.harga)}</p>`;
 
@@ -76,7 +90,7 @@ function renderProduk() {
         <p>${kategori}</p>
         <p>${produk.deskripsi}</p>
         ${markupHarga}
-        ${produk.diskonPersen ? `<p class="discount-note">Diskon ${produk.diskonPersen}%</p>` : ""}
+        ${hargaPromo !== null ? `<p class="discount-note">Diskon ${produk.diskonPersen}%</p>` : ""}
         <span class="stock-badge ${status.className}">${status.label}</span>
         <p>${labelAksi}</p>
       </article>

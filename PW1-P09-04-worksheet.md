@@ -58,6 +58,22 @@ Catat error yang sengaja dicari, cara mengenalinya, dan perbaikannya. Jangan men
 | --- | --- | --- | --- | --- |
 |  |  |  |  |  |
 
+## Troubleshooting
+
+Gunakan Console DevTools dan periksa pesan error, nama file, serta nomor baris sebelum mengubah kode.
+
+| Gejala | Hal yang diperiksa | Perbaikan yang dicoba |
+| --- | --- | --- |
+| `app.js` tidak ditemukan atau berstatus 404 | Path `src`, lokasi file, dan ejaan huruf pada nama file. | Cocokkan `src="js/app.js"` dengan struktur folder proyek. |
+| Pesan “P09 JavaScript aktif” tidak muncul | Script tag, atribut `defer`, serta Console/Network browser. | Pastikan script dimuat pada halaman dan reload setelah perubahan. |
+| Kartu tidak tampil di Produk | ID `#produk-dinamis`, ID ringkasan, dan error pada Console. | Samakan selector di `app.js` dengan ID elemen pada `produk.html`. |
+| Error pada halaman selain Produk | Guard untuk elemen yang tidak tersedia di halaman tersebut. | Kembalikan lebih awal jika target `grid` atau ringkasan tidak ditemukan. |
+| Status stok tidak sesuai | Jenis data `stok` dan urutan kondisi. | Gunakan angka dan cek stok nol sebelum stok terbatas. |
+| Harga promo tidak masuk akal | Nilai harga, rentang diskon, rumus, dan hasil pembulatan. | Pastikan harga tidak negatif, diskon berada di rentang 0-100, lalu uji dengan hitungan manual. |
+| Format rupiah salah | Nilai yang diberikan ke formatter dan konfigurasi `Intl.NumberFormat`. | Berikan angka, bukan string berawalan `Rp`, dan periksa locale/currency. |
+
+Untuk Challenge, validasi diskon sebagai angka dari 0 sampai 100, harga sebagai angka tidak negatif, dan hasil akhir sebagai angka valid. Contoh: harga Rp125.000 dengan diskon 10% menghasilkan Rp112.500.
+
 ## Checklist Quality Gate
 
 - [ ] Struktur HTML/CSS responsif dari proyek tetap dipertahankan.
