@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Produk Kopi Bangsa - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
     <script src="js/nav.js" defer></script>
   </head>
   <body>
@@ -29,6 +30,14 @@
     <main id="konten" class="page">
       <h1>Produk Kopi Bangsa</h1>
       <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
+      <section class="section" aria-labelledby="produk-dinamis-title">
+        <div class="section-header">
+          <p class="eyebrow">Data JavaScript</p>
+          <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
+          <p id="produk-ringkasan" aria-live="polite">Data produk akan dimuat melalui JavaScript.</p>
+        </div>
+        <div id="produk-dinamis" class="js-product-grid"></div>
+      </section>
       <section aria-labelledby="kategori-title">
         <h2 id="kategori-title">Kategori Produk</h2>
         <ul>

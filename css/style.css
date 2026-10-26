@@ -404,6 +404,45 @@ form {
     gap: var(--space-3);
 }
 
+.js-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-3);
+}
+
+.js-product-card {
+    min-width: 0;
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.js-product-card h3 {
+    margin-block-start: 0;
+}
+
+.stock-badge {
+    display: inline-flex;
+    margin-block-start: var(--space-1);
+    padding: 0.2rem var(--space-2);
+    color: var(--color-success);
+    font-size: 0.875rem;
+    font-weight: 700;
+    background: var(--color-success-soft);
+    border-radius: var(--radius-sm);
+}
+
+.stock-badge.warning {
+    color: #754300;
+    background: #fff1c2;
+}
+
+.stock-badge.empty {
+    color: #8f291d;
+    background: #fce5e0;
+}
+
 .gallery-grid {
     grid-template-columns: minmax(0, 1fr);
 }
