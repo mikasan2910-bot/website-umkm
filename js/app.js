@@ -71,7 +71,9 @@ function renderProduk() {
     const status = statusStok(produk.stok);
     const kategori = labelKategori(produk.kategori);
     const labelAksi = produk.stok > 0 ? "Siap dipesan" : "Hubungi admin";
-    const labelUnggulan = produk.unggulan ? "Produk unggulan" : "Pilihan kedai";
+    const badgeUnggulan = produk.unggulan
+      ? '<span class="js-product-label">Produk unggulan</span>'
+      : "";
     const hargaPromo = produk.diskonPersen === undefined
       ? null
       : hitungHargaPromo(produk.harga, produk.diskonPersen);
@@ -85,7 +87,7 @@ function renderProduk() {
 
     markup = markup + `
       <article class="js-product-card">
-        <span class="js-product-label">${labelUnggulan}</span>
+        ${badgeUnggulan}
         <h3>${produk.nama}</h3>
         <p>${kategori}</p>
         <p>${produk.deskripsi}</p>
