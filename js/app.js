@@ -84,12 +84,25 @@ function buatKartuProduk(produk) {
   `;
 }
 
+function buatRingkasanKategori(produkList) {
+  const jumlahPerKategori = {};
+
+  produkList.forEach((produk) => {
+    jumlahPerKategori[produk.kategori] = (jumlahPerKategori[produk.kategori] || 0) + 1;
+  });
+
+  return Object.entries(jumlahPerKategori)
+    .map(([kategori, jumlah]) => `${kategori}: ${jumlah} produk`)
+    .join(", ");
+}
+
 function renderProduk() {
   const grid = document.querySelector("#produk-dinamis");
   const ringkasan = document.querySelector("#produk-ringkasan");
   const unggulan = document.querySelector("#produk-unggulan");
+  const ringkasanKategori = document.querySelector("#ringkasan-kategori");
 
-  if (!grid || !ringkasan || !unggulan) {
+  if (!grid || !ringkasan || !unggulan || !ringkasanKategori) {
     console.warn("Target render produk belum lengkap.");
     return;
   }
@@ -107,6 +120,7 @@ function renderProduk() {
   unggulan.textContent = produkUnggulan
     ? `Produk unggulan: ${produkUnggulan.nama}`
     : "Belum ada produk unggulan.";
+  ringkasanKategori.textContent = buatRingkasanKategori(produkUmkm);
 
   console.table(produkUmkm);
 }
