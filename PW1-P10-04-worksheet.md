@@ -23,7 +23,7 @@ Refactor katalog P09 menjadi function kecil dan rendering DOM yang lebih mudah d
 | PW1-P10-E05 | `buatKartuProduk(produk)` menerima satu object, mengembalikan HTML string kartu, dan menggunakan function status, formatter, kategori, serta formatter harga promo. Uji promo: harga Rp100.000 dengan diskon 10% menghasilkan harga Rp90.000 dan catatan diskon 10%. | Lulus |
 | PW1-P10-E06 | `filter` memilih stok `> 0` (3 dari 4 item), `find` memilih unggulan pertama `Arabika Gayo`, `map(buatKartuProduk)` menghasilkan markup, lalu `join("")` menyatukan markup. Ringkasan kategori: `Kopi: 3 produk, Bundling: 1 produk`. | Lulus |
 | PW1-P10-E07 | `forEach` pertama dipakai sengaja untuk log inspeksi per produk, bukan membangun markup. Console menampilkan nama dan stok keempat produk; `console.table(produkUmkm)` menampilkan empat object. `forEach` kedua mengakumulasi jumlah kategori ke object lokal. | Lulus |
-| PW1-P10-E08 | Halaman Produk menampilkan tiga kartu tersedia, ringkasan `3 produk tersedia dari 4 data.`, unggulan Arabika Gayo, dan ringkasan kategori. Screenshot render: [produk-render.png](assets/evidence/PW1-P10-02/produk-render.png). Browser tidak melaporkan Console error dan halaman tidak overflow horizontal. | Lulus |
+| PW1-P10-E08 | Halaman Produk menampilkan tiga kartu tersedia, ringkasan `3 produk tersedia dari 4 data.`, unggulan Arabika Gayo, dan ringkasan kategori. Screenshot render: [produk-render.png](assets/images/produk-render.png). Browser tidak melaporkan Console error dan halaman tidak overflow horizontal. | Lulus |
 
 ## Temuan Breakpoint DevTools
 
