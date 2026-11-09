@@ -7,6 +7,7 @@ const produkUmkm = [
   { nama: "Robusta Temanggung", kategori: "Kopi", harga: 65000, stok: 4, unggulan: false, deskripsi: "Body kuat dengan sentuhan cokelat." },
   { nama: "Paket Seduh", kategori: "Bundling", harga: 125000, stok: 0, unggulan: true, deskripsi: "Paket kopi dan alat seduh rumahan.", diskonPersen: 10 },
   { nama: "Kopi Lereng Pekalongan", kategori: "Kopi", harga: 32000, stok: 8, unggulan: false, deskripsi: "Kopi lokal untuk seduhan harian." },
+  { nama: "Roti Kopi Gula Aren", kategori: "Makanan", harga: 18000, stok: 6, unggulan: false, deskripsi: "Roti lembut dengan aroma kopi dan isian gula aren.", gambar: "assets/images/roti-kopi-gula-aren.jpg" },
 ];
 
 function formatRupiah(nilai) {
@@ -59,6 +60,25 @@ function hitungHargaPromo(harga, diskonPersen) {
 function buatElemenProduk(produk) {
   const card = document.createElement("article");
   card.classList.add("product-card");
+
+  if (produk.gambar) {
+    const figure = document.createElement("figure");
+    figure.classList.add("product-card-figure");
+
+    const image = document.createElement("img");
+    image.classList.add("product-card-image");
+    image.src = produk.gambar;
+    image.alt = `Foto ${produk.nama}`;
+    image.width = 900;
+    image.height = 599;
+    image.loading = "lazy";
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = "Foto roti kopi gula aren";
+
+    figure.append(image, caption);
+    card.append(figure);
+  }
 
   const title = document.createElement("h3");
   title.textContent = produk.nama;

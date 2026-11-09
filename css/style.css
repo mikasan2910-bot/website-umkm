@@ -364,6 +364,24 @@ form {
     border-left: 5px solid var(--color-accent);
 }
 
+.product-card-figure {
+    margin: 0 0 var(--space-2);
+}
+
+.product-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.product-card-figure figcaption {
+    margin-block-start: 0.35rem;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+}
+
 .product-badge {
     position: absolute;
     inset-block-start: var(--space-2);
