@@ -30,15 +30,21 @@
     <main id="konten" class="page">
       <h1>Produk Kopi Bangsa</h1>
       <p>Pilih produk sesuai kebutuhan seduh harian, kantor, atau hadiah.</p>
-      <section class="section" aria-labelledby="produk-dinamis-title">
-        <div class="section-header">
-          <p class="eyebrow">Data JavaScript</p>
-          <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
-          <p id="produk-ringkasan" aria-live="polite">Data produk akan dimuat melalui JavaScript.</p>
-          <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
-          <p id="ringkasan-kategori">Ringkasan kategori akan dibuat melalui JavaScript.</p>
+      <section class="product-section" aria-labelledby="produk-title">
+        <div class="section-heading">
+          <p class="eyebrow">Katalog</p>
+          <h2 id="produk-title">Produk Unggulan UMKM</h2>
+          <p id="produk-status" class="produk-status" aria-live="polite">Produk belum dimuat.</p>
         </div>
-        <div id="produk-dinamis" class="js-product-grid"></div>
+        <div class="filter-bar" aria-label="Filter kategori produk">
+          <button type="button" class="filter-button is-active" data-filter="Semua" aria-pressed="true">Semua</button>
+          <button type="button" class="filter-button" data-filter="Kopi" aria-pressed="false">Kopi</button>
+          <button type="button" class="filter-button" data-filter="Bundling" aria-pressed="false">Bundling</button>
+          <button type="button" class="filter-button" data-filter="Aksesori" aria-pressed="false">Aksesori</button>
+        </div>
+        <div id="produk-grid" class="product-grid" aria-live="polite"></div>
+        <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
+        <p id="ringkasan-kategori">Ringkasan kategori akan dibuat melalui JavaScript.</p>
       </section>
       <section aria-labelledby="kategori-title">
         <h2 id="kategori-title">Kategori Produk</h2>
@@ -47,57 +53,6 @@
           <li>Paket kantor mingguan</li>
           <li>Paket tester untuk pelanggan baru</li>
         </ul>
-      </section>
-      <section class="catalog-layout" aria-labelledby="catalog-title">
-        <aside class="catalog-filter" aria-labelledby="catalog-title">
-          <h2 id="catalog-title">Filter Produk</h2>
-          <ul>
-            <li><a href="#produk-pilihan-title">Terlaris</a></li>
-            <li><a href="#produk-pilihan-title">Rasa ringan</a></li>
-            <li><a href="#produk-pilihan-title">Paket hemat</a></li>
-            <li><a href="#produk-pilihan-title">Untuk kantor</a></li>
-          </ul>
-        </aside>
-        <div class="catalog-products">
-          <section aria-labelledby="produk-pilihan-title">
-            <h2 id="produk-pilihan-title">Produk Pilihan</h2>
-            <div class="product-grid">
-              <article class="product-card">
-                <span class="product-badge">Terlaris</span>
-                <img src="assets/images/produk-kopi-640.svg" srcset="assets/images/produk-kopi-640.svg 640w, assets/images/produk-kopi-960.svg 960w" sizes="(min-width: 60rem) 12rem, (min-width: 48rem) calc(50vw - 3.75rem), calc(100vw - 4.25rem)" width="640" height="360" loading="lazy" alt="Kemasan Kopi Lereng Pekalongan berwarna hijau di samping cangkir seduh" />
-                <h3>Kopi Tubruk Signature</h3>
-                <p>Karakter cokelat dan kacang dengan body yang kuat.</p>
-                <p class="price">Rp45.000</p>
-                <div class="card-actions">
-                  <a class="button" href="kontak.html">Tanya produk</a>
-                  <a href="#harga-title">Lihat tabel harga</a>
-                </div>
-              </article>
-
-              <article class="product-card">
-                <span class="product-badge">Segar</span>
-                <h3>Cold Brew Aren</h3>
-                <p>Kopi dingin dengan rasa ringan dan manis aren seimbang.</p>
-                <p class="price">Rp22.000</p>
-                <div class="card-actions">
-                  <a class="button" href="kontak.html">Tanya produk</a>
-                  <a href="#harga-title">Lihat tabel harga</a>
-                </div>
-              </article>
-
-              <article class="product-card">
-                <span class="product-badge">Hemat</span>
-                <h3>Paket Seduh Rumahan</h3>
-                <p>Kopi 250 gram, filter, dan panduan seduh untuk pemula.</p>
-                <p class="price">Rp75.000</p>
-                <div class="card-actions">
-                  <a class="button" href="kontak.html">Tanya produk</a>
-                  <a href="#harga-title">Lihat tabel harga</a>
-                </div>
-              </article>
-            </div>
-          </section>
-        </div>
       </section>
       <section aria-labelledby="harga-title">
         <h2 id="harga-title">Daftar Harga</h2>
