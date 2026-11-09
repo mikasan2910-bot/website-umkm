@@ -36,12 +36,19 @@
           <h2 id="produk-title">Produk Unggulan UMKM</h2>
           <p id="produk-status" class="produk-status" aria-live="polite">Produk belum dimuat.</p>
         </div>
-        <div class="filter-bar" aria-label="Filter kategori produk">
+        <div class="filter-bar" role="group" aria-label="Filter kategori produk">
           <button type="button" class="filter-button is-active" data-filter="Semua" aria-pressed="true">Semua</button>
           <button type="button" class="filter-button" data-filter="Kopi" aria-pressed="false">Kopi</button>
           <button type="button" class="filter-button" data-filter="Bundling" aria-pressed="false">Bundling</button>
           <button type="button" class="filter-button" data-filter="Aksesori" aria-pressed="false">Aksesori</button>
         </div>
+        <div class="filter-bar" role="group" aria-label="Filter stok produk">
+          <button type="button" class="filter-button is-active" data-stock-filter="Semua" aria-pressed="true">Semua stok</button>
+          <button type="button" class="filter-button" data-stock-filter="Tersedia" aria-pressed="false">Tersedia</button>
+          <button type="button" class="filter-button" data-stock-filter="Stok terbatas" aria-pressed="false">Stok terbatas</button>
+          <button type="button" class="filter-button" data-stock-filter="Habis" aria-pressed="false">Habis</button>
+        </div>
+        <p id="produk-filter-summary" aria-live="polite">Kategori Semua menampilkan 4 produk dari 4 total produk.</p>
         <div id="produk-grid" class="product-grid" aria-live="polite"></div>
         <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
         <p id="ringkasan-kategori">Ringkasan kategori akan dibuat melalui JavaScript.</p>
