@@ -6,6 +6,7 @@
     <title>Kontak Kopi Bangsa - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/form.js" defer></script>
+    <script src="js/newsletter.js" defer></script>
     <script src="js/nav.js" defer></script>
   </head>
   <body>
@@ -31,31 +32,45 @@
       <h1>Kontak Kopi Bangsa</h1>
       <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama.</p>
 
-      <form id="form-kontak" action="#" method="post">
+      <form id="form-kontak" action="#" method="post" novalidate>
+        <div id="ringkasan-error" class="error-summary" role="alert" hidden></div>
+
         <div class="field">
           <label for="nama">Nama lengkap</label>
-          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" />
+          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" aria-describedby="nama-error" />
+          <p id="nama-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" />
+          <p id="email-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
-          <label for="whatsapp">Nomor WhatsApp</label>
-          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" aria-describedby="whatsapp-help" required />
+          <label for="telepon">Nomor WhatsApp</label>
+          <input
+            id="telepon"
+            name="telepon"
+            type="tel"
+            autocomplete="tel"
+            pattern="^(\+62|62|0)8[1-9][0-9]{6,10}$"
+            aria-describedby="whatsapp-help telepon-error"
+            required
+          />
           <p id="whatsapp-help">Cantumkan kode negara, misalnya +62, agar kami dapat menghubungi Anda.</p>
+          <p id="telepon-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="paket">Paket yang diminati</label>
-          <select id="paket" name="paket" required>
+          <select id="paket" name="paket" required aria-describedby="paket-error">
             <option value="">Pilih paket</option>
             <option value="rumahan">Paket rumahan</option>
             <option value="kantor">Paket kantor</option>
             <option value="reseller">Paket reseller</option>
           </select>
+          <p id="paket-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <fieldset>
@@ -66,6 +81,7 @@
           <label for="topik-pesanan">Status pesanan</label>
           <input id="topik-kerja-sama" type="radio" name="topik" value="kerja-sama" />
           <label for="topik-kerja-sama">Kerja sama</label>
+          <p id="topik-error" class="field-error" aria-live="polite"></p>
         </fieldset>
 
         <fieldset class="time-options">
@@ -86,16 +102,83 @@
           </div>
         </fieldset>
 
+        <fieldset>
+          <legend>Channel kontak pilihan</legend>
+          <input id="channel-wa" type="radio" name="channel" value="whatsapp" />
+          <label for="channel-wa">WhatsApp</label>
+          <input id="channel-email" type="radio" name="channel" value="email" />
+          <label for="channel-email">Email</label>
+          <input id="channel-telepon" type="radio" name="channel" value="telepon" />
+          <label for="channel-telepon">Telepon</label>
+        </fieldset>
+
         <div class="field">
           <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
+          <textarea id="pesan" name="pesan" rows="5" required minlength="10" aria-describedby="hitung-pesan pesan-error"></textarea>
+          <p id="hitung-pesan" class="char-count">0 karakter (minimal 10)</p>
+          <p id="pesan-error" class="field-error" aria-live="polite"></p>
         </div>
-        <button type="submit">Tampilkan Preview</button>
+
+        <div class="field field-check">
+          <input id="setuju" name="setuju" type="checkbox" required aria-describedby="setuju-error" />
+          <label for="setuju">Saya menyetujui data ini digunakan untuk keperluan balasan pesan.</label>
+          <p id="setuju-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+
+        <div class="form-actions">
+          <button type="submit">Tampilkan Preview</button>
+          <button type="reset" class="button-secondary">Reset</button>
+          <button id="simpan-preferensi" type="button" class="button-secondary">Simpan Preferensi</button>
+          <button id="hapus-preferensi" type="button" class="button-secondary">Hapus Preferensi</button>
+        </div>
+
+        <p id="status-preferensi" class="form-feedback" aria-live="polite"></p>
       </form>
 
       <section aria-labelledby="preview-title">
         <h2 id="preview-title">Preview Data</h2>
         <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol dikirim.</pre>
+
+        <h3>Preferensi Tersimpan</h3>
+        <pre id="json-preferensi" aria-live="polite">Belum ada data tersimpan.</pre>
+      </section>
+
+      <section aria-labelledby="newsletter-title">
+        <h2 id="newsletter-title">Berlangganan Kabar</h2>
+        <form id="form-newsletter" action="#" method="post" novalidate>
+          <fieldset>
+            <legend>Minat informasi</legend>
+            <input id="minat-promo" type="checkbox" name="minat" value="promo" />
+            <label for="minat-promo">Promo dan diskon</label>
+            <input id="minat-produk" type="checkbox" name="minat" value="produk-baru" />
+            <label for="minat-produk">Produk baru</label>
+            <input id="minat-acara" type="checkbox" name="minat" value="acara" />
+            <label for="minat-acara">Acara dan workshop</label>
+            <p id="minat-error" class="field-error" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="field">
+            <label for="frekuensi">Frekuensi pengiriman</label>
+            <select id="frekuensi" name="frekuensi" aria-describedby="frekuensi-error">
+              <option value="">Pilih frekuensi</option>
+              <option value="mingguan">Mingguan</option>
+              <option value="bulanan">Bulanan</option>
+            </select>
+            <p id="frekuensi-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Simpan Langganan</button>
+            <button id="hapus-newsletter" type="button" class="button-secondary">Hapus Langganan</button>
+          </div>
+
+          <p id="status-newsletter" class="form-feedback" aria-live="polite"></p>
+        </form>
+
+        <h3>Data Newsletter Tersimpan</h3>
+        <pre id="json-newsletter" aria-live="polite">Belum ada data tersimpan.</pre>
       </section>
     </main>
     <footer class="site-footer">
