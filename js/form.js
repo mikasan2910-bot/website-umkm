@@ -23,7 +23,6 @@
   };
   let sudahCoba = false;
 
-  // ---------- Validasi ----------
 
   function getFieldError(field) {
     const validity = field.validity;
@@ -63,7 +62,6 @@
     return pesan === "";
   }
 
-  // Radio group topik: satu pesan error untuk seluruh grup.
   function validasiTopik() {
     const valid = Array.from(topikInputs).some((input) => input.checked);
     topikError.textContent = valid ? "" : "Pilih salah satu topik pertanyaan.";
